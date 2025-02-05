@@ -18,6 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Cargar archivo de rutas
+const UserRoutes = require('./routes/routes_user');
+
+// uso de las rutas
+app.use('/api', UserRoutes);
+
 // Ruta prueba
 app.get('/ruta-prueba', (req, res) => {
     return res.status(200).json({
